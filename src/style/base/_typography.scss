@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+$font-1 : 'Lato', sans-serif;
+
+// Général
+body {
+  font-family: $font-1;
+  color: #000;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
