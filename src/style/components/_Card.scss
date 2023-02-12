@@ -1,5 +1,15 @@
+.card-wrapper {
+  width: $card-width;
+}
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  cursor: pointer;
   img {
-    width: 256px;
+    width: $card-width;
   }
 }
