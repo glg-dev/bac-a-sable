@@ -10,6 +10,15 @@ export const list = [
   },
   {
     id: 2,
+    title: 'Tic Tac Toe',
+    languages: ['React'],
+    languagesIcons: ['fab fa-react'],
+    description: `Jeu de morpion, à jouer à 2 !`,
+    picture: "./assets/thumbnails/TicTacToe.png",
+    route: '/tictactoe'
+  },
+  {
+    id: 3,
     title: 'Drumkit',
     languages: ['JavaScript'],
     languagesIcons: ['fab fa-js'],
