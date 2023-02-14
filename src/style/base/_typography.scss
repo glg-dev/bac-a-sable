@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Lato:wght@100&display=swap');
 
 $font-1 : 'Lato', sans-serif;
+$font-2 : 'Josefin Sans', sans-serif;
 
 // Général
 body {
@@ -12,4 +13,8 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.text {
+  font-family: $font-2;
 }

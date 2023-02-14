@@ -1,24 +1,47 @@
 .card-wrapper {
   width: $card-width;
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
   border-radius: 20px 20px 0 0;
-  background: #DBDBDB;
   overflow: hidden;
-  cursor: pointer;
-  transform: scale(1);
-  transition: .4s;
-  img {
-    width: $card-width;
-  }
-  h3 {
-    padding: .6rem;
-  }
   &:hover {
     box-shadow: 0 0 16px #DBDBDB;
     transform: scale(1.01);
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #DBDBDB;
+    cursor: pointer;
+    transform: scale(1);
+    transition: $transition-duration;
+    img {
+      width: $card-width;
+      height: 196px;
+    }
+    h3 {
+      padding: .6rem;
+    }
+  }
+  .infos {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(246, 246, 246, .8);
+    transition: $transition-duration;
+    opacity: 0;
+    z-index: 1;
+    i {
+      font-size: 2rem;
+    }
+    &:hover {
+      opacity: 1;
+    }
   }
 }
