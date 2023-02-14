@@ -5,5 +5,12 @@
 }
 
 body {
-  background-color: #dbdbdb;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8E9EAB, #EEF2F3);
+  padding: 1.5rem;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
 }
