@@ -10,7 +10,7 @@ const Card = ({ project }) => {
       <Link to={route}>
         <div className='card'>
           <img src={picture} alt={title} />
-          <h1>{title}</h1>
+          <h3>{title}</h3>
         </div>
       </Link>
     </div>
