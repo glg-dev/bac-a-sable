@@ -5,6 +5,11 @@ const Stars = () => {
 
   const [stars, setStars] = useState([])
 
+  useEffect(() => {
+    document.title = "Sky by night"
+  }, [])
+
+
   function makeAStar() {
     const size = Math.random() * 2 + 'px'
     const colors = [ '#8CBFDB', '#303e8c', '#4369d9', '#1f1f26', '#9ad2df', '#333259', '#302f40' ];

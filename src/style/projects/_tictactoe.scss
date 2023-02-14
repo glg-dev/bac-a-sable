@@ -1,0 +1,72 @@
+.game {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#14055a, $night-blue);
+  color: #FFF;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  .status {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  &-table {
+    padding: .2rem;
+    border: 2px solid #FFF;
+    border-radius: 6px;
+    background-color: $night-blue;
+  }
+  &-row:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .restart {
+    padding: .5rem 1rem;
+    outline: none;
+    background-color: #FFF;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: none;
+    transform: scale(1);
+    transition: $transition-duration;
+    &:hover {
+      box-shadow: 0 0 12px rgba($color: #FFF, $alpha: .6);
+      transform: scale(1.05);
+    }
+  }
+}
+
+.square {
+  background: white;
+  border: 1px solid $night-blue;
+  float: left;
+  font-size: 48px;
+  font-weight: bold;
+  color: #14055a;
+  line-height: $tictactoe-size;
+  height: $tictactoe-size;
+  width: $tictactoe-size;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background-color: #d5d1e6;
+  }
+  &:focus {
+    outline: none;
+  }
+}
