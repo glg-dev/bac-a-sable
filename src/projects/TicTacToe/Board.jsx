@@ -1,10 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Square from './Square';
 
 const Board = () => {
 
   const [squares, setSquares] = useState(Array(9).fill(null))
   const [isX, setIsX] = useState(true)
+  const [isMulti, setIsMulti] = useState(false)
+
+  useEffect(() => {
+    if (!isMulti && !isX && !winner) {
+      let nullValues = []
+      for (let i = 0; i < squares.length; i++) {
+        const element = squares[i];
+        if (element === null) {
+          nullValues.push(i)
+        }
+      }
+      const randomNumber = Math.floor(Math.random() * nullValues.length )
+      const randomIndex = nullValues[randomNumber]
+      squares[randomIndex] = "O" 
+      setIsX(!isX)
+    } else {
+      return
+    }
+  }, [isX])
 
   const handleClick = (i) => {
     if (calculateWinner(squares) || squares[i]) {
@@ -40,6 +59,8 @@ const Board = () => {
     return null
   }
 
+  let soloOrMulti = isMulti ? "2 players" : "1 player"
+
   const winner = calculateWinner(squares)
   let status
 
@@ -56,25 +77,34 @@ const Board = () => {
   
   return (
     <div className='board'>
-      <div className="status">{status}</div>
-      <div className="board-table">
-        <div className="board-row">
+      <section className="infos">
+        <div className="players">{soloOrMulti}</div>
+        <div className="status">{status}</div>
+      </section>
+      <main className="board-table">
+        <section className="board-row">
           {renderSquare(0)}
           {renderSquare(1)}
           {renderSquare(2)}
-        </div>
-        <div className="board-row">
+        </section>
+        <section className="board-row">
           {renderSquare(3)}
           {renderSquare(4)}
           {renderSquare(5)}
-        </div>
-        <div className="board-row">
+        </section>
+        <section className="board-row">
           {renderSquare(6)}
           {renderSquare(7)}
           {renderSquare(8)}
+        </section>
+      </main>
+      <aside className="buttons">
+        <button className='restart' onClick={handleRestart}>Restart</button>
+        <div className="play-mode">
+          <button className='play-mode-button' onClick={() => setIsMulti(false)}>Solo</button>
+          <button className='play-mode-button' onClick={() => setIsMulti(true)}>Multi</button>
         </div>
-      </div>
-      <button className='restart' onClick={handleRestart}>Restart</button>
+      </aside>
     </div>
   );
 };
