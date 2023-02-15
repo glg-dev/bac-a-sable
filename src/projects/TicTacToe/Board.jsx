@@ -6,16 +6,20 @@ const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
   const [isX, setIsX] = useState(true)
   const [isMulti, setIsMulti] = useState(false)
+  const [noEmptySquare, setNoEmptySquare] = useState(false)
 
   useEffect(() => {
-    if (!isMulti && !isX && !winner) {
-      let nullValues = []
-      for (let i = 0; i < squares.length; i++) {
-        const element = squares[i];
-        if (element === null) {
-          nullValues.push(i)
-        }
+    let nullValues = []
+    for (let i = 0; i < squares.length; i++) {
+      const element = squares[i];
+      if (element === null) {
+        nullValues.push(i)
       }
+    }
+    if (!nullValues.length && !winner) {
+      setNoEmptySquare(true)
+    }
+    if (!isMulti && !isX && !winner) {
       const randomNumber = Math.floor(Math.random() * nullValues.length )
       const randomIndex = nullValues[randomNumber]
       squares[randomIndex] = "O" 
@@ -66,6 +70,8 @@ const Board = () => {
 
   if (winner) {
     status = `Winner : ${winner} !`
+  } else if (noEmptySquare) {
+    status = "No Winner"
   } else {
     status = `Player : ${isX ? "X" : "O"}`
   }
@@ -73,6 +79,7 @@ const Board = () => {
   const handleRestart = () => {
     setIsX(true)
     setSquares(Array(9).fill(null))
+    setNoEmptySquare(false)
   }
   
   return (
@@ -101,8 +108,8 @@ const Board = () => {
       <aside className="buttons">
         <button className='restart' onClick={handleRestart}>Restart</button>
         <div className="play-mode">
-          <button className='play-mode-button' onClick={() => setIsMulti(false)}>Solo</button>
-          <button className='play-mode-button' onClick={() => setIsMulti(true)}>Multi</button>
+          <button className={ !isMulti ? 'active' : null} onClick={() => setIsMulti(false)}>Solo</button>
+          <button className={ isMulti ? 'active' : null} onClick={() => setIsMulti(true)}>Multi</button>
         </div>
       </aside>
     </div>

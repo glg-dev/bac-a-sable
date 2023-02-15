@@ -13,7 +13,7 @@ export const list = [
     title: 'Tic Tac Toe',
     languages: ['React'],
     languagesIcons: ['fab fa-react'],
-    description: `Jeu de morpion, à jouer à 2 !`,
+    description: `Jeu de morpion, à jouer seul ou à 2 !`,
     picture: "./assets/thumbnails/TicTacToe.png",
     route: '/tictactoe'
   },
