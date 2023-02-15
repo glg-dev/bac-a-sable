@@ -37,22 +37,26 @@
   }
   .buttons {
     display: flex;
-  }
-  .restart, .play-mode-button {
-    padding: .5rem 1rem;
-    outline: none;
-    background-color: #FFF;
-    border-radius: 6px;
-    font-size: 1.5rem;
-    font-family: inherit;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: none;
-    transform: scale(1);
-    transition: $transition-duration;
-    &:hover {
-      box-shadow: 0 0 12px rgba($color: #FFF, $alpha: .6);
-      transform: scale(1.05);
+    gap: 2rem;
+    button {
+      padding: .5rem 1rem;
+      outline: none;
+      background-color: #FFF;
+      border-radius: 6px;
+      font-size: 1.5rem;
+      font-family: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: none;
+      transform: scale(1);
+      transition: $transition-duration;
+      &.active {
+        background-color: #d5d1e6;
+      }
+      &:hover {
+        box-shadow: 0 0 12px rgba($color: #FFF, $alpha: .6);
+        transform: scale(1.05);
+      }
     }
   }
 }

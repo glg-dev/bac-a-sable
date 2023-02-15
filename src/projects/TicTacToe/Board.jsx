@@ -101,8 +101,8 @@ const Board = () => {
       <aside className="buttons">
         <button className='restart' onClick={handleRestart}>Restart</button>
         <div className="play-mode">
-          <button className='play-mode-button' onClick={() => setIsMulti(false)}>Solo</button>
-          <button className='play-mode-button' onClick={() => setIsMulti(true)}>Multi</button>
+          <button className={ !isMulti ? 'active' : null} onClick={() => setIsMulti(false)}>Solo</button>
+          <button className={ isMulti ? 'active' : null} onClick={() => setIsMulti(true)}>Multi</button>
         </div>
       </aside>
     </div>
