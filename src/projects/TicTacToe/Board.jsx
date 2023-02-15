@@ -79,6 +79,7 @@ const Board = () => {
   const handleRestart = () => {
     setIsX(true)
     setSquares(Array(9).fill(null))
+    setNoEmptySquare(false)
   }
   
   return (
