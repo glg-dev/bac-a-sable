@@ -1,8 +1,10 @@
 @import './utils/variables';
+@import './utils/keyframes';
 @import './base/typography';
 @import './settings.scss';
 @import './projects/stars';
 @import './projects/tictactoe';
 @import './projects/passwordGenerator';
+@import './projects/rotatingCube';
 @import './components/Card';
 @import './components/BackHomeArrow';

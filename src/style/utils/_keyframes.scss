@@ -1,0 +1,30 @@
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    letter-spacing: .1rem;
+  }
+  50% {
+    transform: scale(1.1) translateX(2px);
+    letter-spacing: .25rem;
+
+  }
+  100% {
+    transform: scale(1);
+    letter-spacing: .1rem;
+  }
+}
+
+@keyframes circle-1-spin {
+  from {transform: rotateX(0deg) rotateY(25deg) rotateZ(20deg);}
+  to {transform: rotateX(360deg) rotateY(205deg) rotateZ(3600deg);}
+}
+
+@keyframes circle-2-spin {
+  from {transform: rotateY(0deg) rotateX(0deg);}
+  to {transform: rotateY(360deg) rotateX(0deg);}
+}
+
+@keyframes cube-spin {
+  0% {transform: rotateY(0deg) rotateZ(45deg) rotateX(45deg); }
+  100% { transform: rotateY(3600deg) rotateZ(5445deg) rotateX(45deg); }
+}
