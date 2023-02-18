@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import BackHomeArrow from '../components/BackHomeArrow';
 
 const Stars = () => {
 
@@ -42,9 +43,12 @@ const Stars = () => {
   }, [stars])
   
   return (
-    <div className='stars'>
-      {stars}
-    </div>
+    <>
+      <BackHomeArrow />
+      <div className='stars'>
+        {stars}
+      </div>
+    </>
   );
 };
 
