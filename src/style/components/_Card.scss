@@ -3,6 +3,9 @@
   position: relative;
   border-radius: 20px 20px 0 0;
   overflow: hidden;
+  transform: scale(1);
+  transition: $transition-duration;
+  cursor: pointer;
   &:hover {
     box-shadow: 0 0 16px $glowing-yellow;
     transform: scale(1.01);
@@ -15,10 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #DBDBDB;
-    cursor: pointer;
-    transform: scale(1);
-    transition: $transition-duration;
+    background: $light-grey;
     img {
       width: $card-width;
       height: 196px;
@@ -37,12 +37,25 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background-color: rgba(246, 246, 246, .8);
+    background-color: rgba(66, 66, 66, 0.96);
+    color: $light-grey;
     transition: $transition-duration;
     opacity: 0;
     z-index: 1;
+    .icons {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
     i {
-      font-size: 2rem;
+      cursor: auto;
+      border-radius: 50%;
+      padding: .5rem;
+      font-size: 1.5rem;
+      transition: $transition-duration;
+      &:hover {
+        box-shadow: 0 0 4px $night-blue;
+      }
     }
     &:hover {
       opacity: 1;

@@ -30,7 +30,7 @@ export const list = [
     id: 4,
     title: 'Drumkit',
     languages: ['JavaScript'],
-    languagesIcons: ['fab fa-js'],
+    languagesIcons: ['fab fa-js', 'fab fa-css3-alt'],
     description: `Création d'un kit de batterie. Il suffit d'appuyer sur les touches correspondantes pour jouer le son voulu, ou de cliquer sur le son.`,
     picture: "./assets/thumbnails/DrumKit.png",
     route: 'https://glg-dev.github.io/JavaScript-Drum-Kit/'
