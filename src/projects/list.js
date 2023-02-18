@@ -28,6 +28,15 @@ export const list = [
   },
   {
     id: 4,
+    title: 'Rotating Cube',
+    languages: ['React'],
+    languagesIcons: ['fab fa-js', 'fab fa-sass'],
+    description: `Animation 3D d'un cube. Possibilité de contrôle avec la souris.`,
+    picture: "./assets/thumbnails/DrumKit.png",
+    route: '/cube'
+  },
+  {
+    id: 5,
     title: 'Drumkit',
     languages: ['JavaScript'],
     languagesIcons: ['fab fa-js', 'fab fa-css3-alt'],

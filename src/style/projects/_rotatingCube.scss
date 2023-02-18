@@ -1,0 +1,102 @@
+.rotating-cube {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+  color: $light-grey;
+  height: 90vh;
+  h1 {
+    text-align: center;
+    width: 90%;
+    max-width: 1300px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: 3px 0 0 $glowing-green, 5px 0 0 $glowing-blue, 7px 0 0 $glowing-green;
+    animation: scale 8s linear infinite;
+  }
+  .container {
+    height: 80%;
+    max-height: 500px;
+    width: 940px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px 0 #FFF, 0 0 12px 2px $glowing-green;
+    cursor: move;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      height: 10%;
+      width: 290px;
+      background: #666666;
+      filter: blur(20px);
+      z-index: 100;      
+    }
+    .circle-container {
+      position: absolute;
+      width: calc(#{$cube-size} * 2);
+      height: calc(#{$cube-size} * 2);
+      border: 1px solid $glowing-green;
+      box-shadow: 0 0 5px 0 #FFF, 0 0 12px 2px $glowing-green;
+      border-radius: 50%;
+    }
+    .circle-1 {
+      transform-style: preserve-3d;  
+      animation: circle-1-spin 15s infinite;
+    }
+    
+    .circle-2 {
+      transform-style: preserve-3d;  
+      animation: circle-2-spin 15s infinite;
+    }
+    .cube {
+      position: relative;
+      width: $cube-size;
+      height: $cube-size;
+      transform-style: preserve-3d;
+      .side {
+        position:absolute;
+        width: $cube-size;
+        height: $cube-size;
+        border: 1px solid $glowing-green;
+        box-shadow: 0 0 5px 0 #FFF, 0 0 12px 2px $glowing-green;
+      }
+      
+      #front {
+        background: transparent;
+        transform: translateZ(calc(#{$cube-size} / 2));
+      }
+      #top {
+        background: transparent;
+        transform: rotateX(-270deg) translateY(calc(-1 * (#{$cube-size} / 2 ) ) );
+        transform-origin: top center;
+      }
+      #bottom {
+        background: transparent;  
+        transform: rotateX(270deg) translateY(calc(#{$cube-size} / 2) );
+        transform-origin: bottom center; 
+      }
+      #right {
+        background: transparent;
+        transform: rotateY(-270deg) translateX(calc(#{$cube-size} / 2) );
+        transform-origin: top right;
+      }
+      #left {
+        background: transparent;
+        transform: rotateY(270deg) translateX(calc(-1 * (#{$cube-size} / 2 ) ));
+        transform-origin: center left;
+      }
+      #back {
+        background: transparent;
+        transform: rotateY(-180deg) translateZ(calc((#{$cube-size} / 2 ) ));
+      }
+    }
+  }
+}
