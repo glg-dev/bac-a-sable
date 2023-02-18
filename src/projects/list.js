@@ -32,7 +32,7 @@ export const list = [
     languages: ['React'],
     languagesIcons: ['fab fa-js', 'fab fa-sass'],
     description: `Animation 3D d'un cube. Possibilité de contrôle avec la souris.`,
-    picture: "./assets/thumbnails/DrumKit.png",
+    picture: "./assets/thumbnails/RotatingCube.png",
     route: '/cube'
   },
   {
