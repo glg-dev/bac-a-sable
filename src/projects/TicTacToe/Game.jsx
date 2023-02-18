@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import BackHomeArrow from '../../components/BackHomeArrow';
 import Board from './Board';
 
 const Game = () => {
@@ -8,9 +9,12 @@ const Game = () => {
   }, [])
   
   return (
-    <div className='game'>
-        <Board />
-    </div>
+    <>
+      <BackHomeArrow />
+      <div className='game'>
+          <Board />
+      </div>
+    </>
   );
 };
 
