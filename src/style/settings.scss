@@ -16,6 +16,10 @@ body {
   padding: 1.5rem;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .fa-react {
   color: $react-color;
 }
@@ -30,4 +34,14 @@ body {
 
 .fa-css3-alt {
   color: $css-color;
+}
+
+.game {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(#14055a, $night-blue);
+  color: #FFF;
 }

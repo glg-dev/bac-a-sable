@@ -19,6 +19,15 @@ export const list = [
   },
   {
     id: 3,
+    title: 'Rock Paper Scissors',
+    languages: ['React'],
+    languagesIcons: ['fab fa-react', 'fab fa-sass'],
+    description: `Pierre, feuille, ciseaux, avec une variante que les fans de The Big Bang Theory reconnaîtront !`,
+    picture: "./assets/thumbnails/RockPaperScissors.png",
+    route: '/rockpaperscissors'
+  },
+  {
+    id: 4,
     title: 'Password Generator',
     languages: ['React'],
     languagesIcons: ['fab fa-react', 'fab fa-sass'],
@@ -27,7 +36,7 @@ export const list = [
     route: '/password-generator'
   },
   {
-    id: 4,
+    id: 5,
     title: 'Rotating Cube',
     languages: ['React'],
     languagesIcons: ['fab fa-js', 'fab fa-sass'],
@@ -36,7 +45,7 @@ export const list = [
     route: '/cube'
   },
   {
-    id: 5,
+    id: 6,
     title: 'Drumkit',
     languages: ['JavaScript'],
     languagesIcons: ['fab fa-js', 'fab fa-css3-alt'],
