@@ -1,15 +1,25 @@
+// MAIN COLORS
 $night-blue: #1A1A20;
 $light-grey: #DBDBDB;
-$glowing-yellow: #FFEE10;
-$glowing-green: #44D62C;
+
+// GLOWING COLORS
+$glowing-purple: #c724b1;
 $glowing-blue: #4D4DFF;
+$glowing-green: #44D62C;
+$glowing-yellow: #FFEE10;
+$glowing-orange: #FFAD00;
+$glowing-red: #D22730;
+
+// ICON COLORS
 $javascript-color: #f7df1e;
 $react-color: #00d8ff;
 $css-color: #1572B6;
 $sass-color: #CC6699;
 
+// SIZES
 $card-width: 256px;
 $tictactoe-size: 128px;
 $cube-size: 200px;
 
+// TIMES
 $transition-duration: .4s
