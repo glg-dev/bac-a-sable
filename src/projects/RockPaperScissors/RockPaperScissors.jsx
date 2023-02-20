@@ -10,8 +10,8 @@ const RockPaperScissors = () => {
   const [userChoice, setUserChoice] = useState(null)
   const [cpuChoice, setCpuChoice] = useState(null)
   const [status, setStatus] = useState("")
-  const [userScore, setUserScore] = useState(0)
-  const [cpuScore, setCpuScore] = useState(0)  
+  const [userScore, setUserScore] = useState(parseInt(localStorage.getItem("userScore")) || 0)
+  const [cpuScore, setCpuScore] = useState(parseInt(localStorage.getItem("cpuScore")) || 0)  
 
   const items = regularMode ? ["rock", "paper", "scissors"] : ["rock", "paper", "scissors", "lizard", "Spock"]
 
@@ -35,6 +35,22 @@ const RockPaperScissors = () => {
     }
   }, [cpuChoice])
 
+  useEffect(() => {
+    if (status.includes("win")) {
+      setUserScore(userScore + 1)
+    } else if (status.includes("lose")) {
+      setCpuScore(cpuScore + 1)
+    }
+  }, [status])
+
+  useEffect(() => {
+    localStorage.setItem("userScore", userScore)
+  }, [userScore])
+
+  useEffect(() => {
+    localStorage.setItem("cpuScore", cpuScore)
+  }, [cpuScore])
+
   const handleClick = (item) => {
     if (status) {
       return
@@ -48,78 +64,65 @@ const RockPaperScissors = () => {
     setStatus("")
   }
 
+  const resetScore = () => {
+    localStorage.setItem("userScore", 0)
+    setUserScore(0)
+    localStorage.setItem("cpuScore", 0)
+    setCpuScore(0)
+  }
+
   function determinateWinner(a, b) {
     if (a === b) {
-      setStatus("Nobody wins")
+      setStatus("Nobody scores")
     } else if (a === "rock") {
       if (b === "paper") {
         setStatus("Paper covers rock, you lose !")
-        setCpuScore(cpuScore + 1)
       } else if (b === "scissors") {
         setStatus("Rock crushes scissors, you win !")
-        setUserScore(userScore + 1)
       } else if (b === "lizard") {
         setStatus("Rock crushes lizard, you win !")
-        setUserScore(userScore + 1)
       } else {
         setStatus("Spock vaporizes rock, you lose !")
-        setUserScore(cpuScore + 1)
       }
     } else if (a === "paper") {
       if (b === "rock") {
         setStatus("Paper covers rock, you win !")
-        setUserScore(userScore + 1)
       } else if (b === "scissors") {
         setStatus("Scissors cuts paper, you lose !")
-        setCpuScore(cpuScore + 1)
       } else if (b === "lizard") {
         setStatus("Lizard eats paper, you lose !")
-        setCpuScore(cpuScore + 1)
       } else {
         setStatus("Paper disproves Spock, you win !")
-        setUserScore(userScore + 1)
       }
     } else if (a === "scissors") {
       if (b === "rock") {
         setStatus("Rock crushes scissors, you lose !")
-        setCpuScore(cpuScore + 1)
       } else if (b === "paper") {
         setStatus("Scissors cuts paper, you win !")
-        setUserScore(userScore + 1)
       } else if (b === "lizard") {
         setStatus("Scissors decapitates lizard, you win !")
-        setUserScore(userScore + 1)
       } else {
         setStatus("Spock smashes scissors, you lose !")
-        setCpuScore(cpuScore + 1)
       }
     } else if (a === "lizard") {
       if (b === "rock") {
         setStatus("Rock crushes lizard, you lose !")
-        setCpuScore(cpuScore + 1)
       } else if (b === "paper") {
         setStatus("Lizard eats paper, you win !")
-        setUserScore(userScore + 1)
       } else if (b === "scissors") {
         setStatus("Scissors decapitates lizard, you lose !")
-        setCpuScore(cpuScore + 1)
       } else {
         setStatus("Lizard poisons Spock, you win !")
-        setUserScore(userScore + 1)
       }
     } else {
       if (b === "rock") {
         setStatus("Spock vaporizes rock, you win !")
-        setUserScore(userScore + 1)
       } else if (b === "paper") {
         setStatus("Paper disproves Spock, you lose !")
-        setCpuScore(cpuScore + 1)
       } else if (b === "scissors") {
         setStatus("Spock smashes scissors, you win !")
-        setUserScore(userScore + 1)
       } else {
         setStatus("Lizard poisons Spock, you lose !")
-        setCpuScore(cpuScore + 1)
       }
     }
   }
@@ -127,8 +130,11 @@ const RockPaperScissors = () => {
   
   return (
     <div className='rock-paper-scissors game'>
-      <h1 className='score'>You <span>{userScore}</span> - <span>{cpuScore}</span> CPU</h1>
-      <div className="rpc-board">
+      <header>
+        <h1 className='score'>You <span>{userScore}</span> - <span>{cpuScore}</span> CPU</h1>
+        <button type="reset" onClick={resetScore}>Restart</button>
+      </header>
+      <div className="rps-board">
         <main className="wrapper">
           <button className={`choice ${items[0]}`} onClick={() => handleClick(items[0])}>
             <i className='fas fa-hand-back-fist'></i>
