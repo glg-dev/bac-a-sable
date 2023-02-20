@@ -1,13 +1,23 @@
 .rock-paper-scissors {
   flex-direction: column;
-  .score {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 2rem;
+    button {
+      margin: 0;
+    }
+  }
+  .score {
     span {
       margin: 0 1rem;
     }
   }
-  .rpc-board {
+  .rps-board {
     display: flex;
+    justify-content: space-around;
     width: 100vw;
   }
   .wrapper {
