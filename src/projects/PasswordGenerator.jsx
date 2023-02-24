@@ -53,7 +53,7 @@ const PasswordGenerator = () => {
   return (
     <>
       <BackHomeArrow />
-      <div className="password-generator-wrapper">
+      <div className="game">
         <div className='password-generator'>
           <h3 className='output'>{password}</h3>
           <section className="range">

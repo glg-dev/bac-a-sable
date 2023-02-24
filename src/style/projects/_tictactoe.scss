@@ -41,7 +41,7 @@
       transform: scale(1);
       transition: $transition-duration;
       &.active {
-        background-color: #d5d1e6;
+        background-color: $light-purple;
       }
       &:hover {
         box-shadow: 0 0 12px rgba($color: #FFF, $alpha: .6);
@@ -67,7 +67,7 @@
   text-align: center;
   cursor: pointer;
   &:hover {
-    background-color: #d5d1e6;
+    background-color: $light-purple;
   }
   &:focus {
     outline: none;
