@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&family=Lato:wght@100;400&display=swap');
 
 $font-1 : 'Lato', sans-serif;
 $font-2 : 'Josefin Sans', sans-serif;
@@ -8,13 +8,106 @@ body {
   font-family: $font-1;
   color: #000;
   text-align: justify;
+  font-weight: 100;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
+h3 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+button {
+  font-size: 1rem;
 }
 
 .text {
   font-family: $font-2;
+  font-weight: 400;
+  font-size: .9rem;
+}
+
+.fa-react {color: $react-color;}
+.fa-js {color: $javascript-color;}
+.fa-sass {color: $sass-color;}
+.fa-css3-alt {color: $css-color;}
+
+// Tic tac toe
+.board {
+  .infos {
+  font-size: 2rem;
+  font-weight: bold;
+  }
+  .status {
+    text-align: center;
+  }
+}
+.square {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 1px 2px 4px $air-force-blue;
+} 
+.rotating-cube h1 {
+  font-weight: 400;
+}
+.winner {animation: mini-scale 2s infinite;}
+.X {color: $air-force-blue;}
+.O {color: $mountbatten-pink;}
+
+// Rock Paper Scissors
+.rock-paper-scissors {
+  h2 {text-align: center;}
+  i {
+    font-size: 4rem;
+    text-shadow: 2px 4px 4px $night;
+  } 
+  .choice {
+    &:hover i {color: #000 !important;}
+    &.rock i {color: $glowing-blue;}
+    &.paper i {color: $glowing-orange;}
+    &.scissors i {color: $glowing-red;}
+    &.lizard i {color: $glowing-green;}
+    &.Spock i {color: $glowing-purple;}
+  }
+  .comment {font-size: 2.5rem;}
+  button {color: $platinum;}
+}
+
+// Password generator
+.password-generator {
+  .output {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 100;
+    &.generated {
+      font-weight: normal;
+    }
+  }
+  input {
+    color: inherit;
+    &:hover + label, &:checked + label {color: #000;}
+  }
+  #display-password-length {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  .items {font-weight: bold;}
+  label {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  button {
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    &:hover {color: #000;}
+  }
+}
+
+// Rotating cube
+.rotating-cube {
+  color: $platinum;
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: 3px 0 0 $air-force-blue, 5px 0 0 $mountbatten-pink, 7px 0 0 $honeydew;
+  }
 }

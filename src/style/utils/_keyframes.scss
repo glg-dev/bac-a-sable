@@ -14,6 +14,22 @@
   }
 }
 
+@keyframes mini-scale {
+  0% {
+    transform: scale(1);
+    letter-spacing: .1rem;
+  }
+  50% {
+    transform: scale(1.01);
+    letter-spacing: .15rem;
+
+  }
+  100% {
+    transform: scale(1);
+    letter-spacing: .1rem;
+  }
+}
+
 @keyframes circle-1-spin {
   from {transform: rotateX(0deg) rotateY(25deg) rotateZ(20deg);}
   to {transform: rotateX(360deg) rotateY(205deg) rotateZ(3600deg);}

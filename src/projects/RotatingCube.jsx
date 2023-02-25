@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { documentTitle } from '..';
 import BackHomeArrow from '../components/BackHomeArrow';
 
 const RotatingCube = () => {
@@ -7,7 +8,7 @@ const RotatingCube = () => {
   const [transform, setTransform] = useState(null)
   const [transition, setTransition] = useState(null)
   
-  document.title = "Rotating Cube"
+  document.title = `${documentTitle} - Rotating Cube`
 
   const cubeStyle = {
     animation: animation,

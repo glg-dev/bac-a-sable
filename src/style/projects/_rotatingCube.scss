@@ -4,15 +4,10 @@
   align-items: center;
   justify-content: space-evenly;
   gap: 1rem;
-  color: $light-grey;
   height: 90vh;
   h1 {
-    text-align: center;
     width: 90%;
     max-width: 1300px;
-    font-size: 3rem;
-    text-transform: uppercase;
-    text-shadow: 3px 0 0 $glowing-green, 5px 0 0 $glowing-blue, 7px 0 0 $glowing-green;
     animation: scale 8s linear infinite;
   }
   .container {
@@ -24,7 +19,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 5px 0 #FFF, 0 0 12px 2px $glowing-green;
+    box-shadow: 0 0 5px 0 #FFF, 0 0 12px 2px $honeydew;
     cursor: move;
     &::after {
       content: '';
@@ -43,8 +38,8 @@
       position: absolute;
       width: calc(#{$cube-size} * 2);
       height: calc(#{$cube-size} * 2);
-      border: 1px solid $glowing-green;
-      box-shadow: 0 0 5px 0 #FFF, 0 0 12px 2px $glowing-green;
+      border: 1px solid $honeydew;
+      box-shadow: 0 0 5px 0 #FFF, 0 0 12px 2px $honeydew;
       border-radius: 50%;
     }
     .circle-1 {
@@ -65,8 +60,8 @@
         position:absolute;
         width: $cube-size;
         height: $cube-size;
-        border: 1px solid $glowing-green;
-        box-shadow: 0 0 5px 0 #FFF, 0 0 12px 2px $glowing-green;
+        border: 1px solid $honeydew;
+        box-shadow: 0 0 5px 0 #FFF, 0 0 12px 2px $honeydew;
       }
       
       #front {

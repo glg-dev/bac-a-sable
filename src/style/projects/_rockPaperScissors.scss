@@ -34,11 +34,8 @@
     gap: 1rem;
     height: auto;
     padding: 1rem;
-    border: 1px solid $light-grey;
+    border: 1px solid $platinum;
     border-radius: 8px;
-    h2 {
-      text-align: center;
-    }
     li {
       margin-top: .75rem;
     }
@@ -57,34 +54,24 @@
       filter: brightness(110%);
       transform: scale(1.1);
       i {
-        color: #000 !important;
         transform: rotateY(360deg);
       }
     }
     &.rock {
       border: 1rem solid $glowing-blue;
-      i {
-        color: $glowing-blue;
-      }
       &:hover {
         background-color: $glowing-blue;
       }
     }
     &.paper {
       align-self: flex-start;
-      border: 1rem solid $glowing-yellow;
-      i {
-        color: $glowing-yellow;
-      }
+      border: 1rem solid $glowing-orange;
       &:hover {
-        background-color: $glowing-yellow;
+        background-color: $glowing-orange;
       }
     }
     &.scissors {
       border: 1rem solid $glowing-red;
-      i {
-        color: $glowing-red;
-      }
       &:hover {
         background-color: $glowing-red;
       }
@@ -92,25 +79,16 @@
     &.lizard {
       align-self: flex-start;
       border: 1rem solid $glowing-green;
-      i {
-        color: $glowing-green;
-      }
       &:hover {
         background-color: $glowing-green;
       }
     }
     &.Spock {
       border: 1rem solid $glowing-purple;
-      i {
-        color: $glowing-purple;
-      }
       &:hover {
         background-color: $glowing-purple;
       }
     }
-  }
-  i {
-    font-size: 4rem;
   }
   .comment {
     position: absolute;
@@ -120,22 +98,19 @@
     align-items: center;
     padding: 3rem 5rem;
     background: rgba($color: #000, $alpha: .75);
-    border: 2px solid $light-grey;
+    border: 2px solid $platinum;
     border-radius: 6px;
-    font-size: 2.5rem;
   }
   button {
     background: transparent;
     padding: 0.5rem 1rem;
-    outline: none;
-    border: 1px solid $light-grey;
+    border: 1px solid $platinum;
     border-radius: 4px;
-    color: $light-grey;
     margin-top: 1rem;
     cursor: pointer;
     transition: .2s ease-in-out;
     &:hover {
-      background: rgba($color: $light-grey, $alpha: .5);
+      background: rgba($color: $platinum, $alpha: .5);
     }
   }
 }

@@ -86,7 +86,7 @@ const Board = () => {
     <div className='board'>
       <section className="infos">
         <div className="players">{soloOrMulti}</div>
-        <div className="status">{status}</div>
+        <div className={`status ${winner ? "winner" : isX ? "X" : "O"}`}>{status}</div>
       </section>
       <main className="board-table">
         <section className="board-row">

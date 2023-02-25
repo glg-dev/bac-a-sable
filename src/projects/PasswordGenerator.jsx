@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { documentTitle } from '..';
 import BackHomeArrow from '../components/BackHomeArrow';
 
 const PasswordGenerator = () => {
@@ -9,7 +10,7 @@ const PasswordGenerator = () => {
   const [isNumbersChecked, setIsNumbersChecked] = useState(false)
   const [isSymbolsChecked, setIsSymbolsChecked] = useState(false)
 
-  document.title = "Password Generator"
+  document.title = `${documentTitle} - Password Generator`
 
   const dataLowercase = "abcdefghijklmnopqrstuvwxyz".split("")
   const dataUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
@@ -38,6 +39,7 @@ const PasswordGenerator = () => {
     )
 
     if (!data.length) {
+      setPassword('Générateur de mdp')
       alert("Veuillez sélectionner des critères")
       return
     }
@@ -55,7 +57,7 @@ const PasswordGenerator = () => {
       <BackHomeArrow />
       <div className="game">
         <div className='password-generator'>
-          <h3 className='output'>{password}</h3>
+          <h3 className={`output ${password === 'Générateur de mdp' ? '' : "generated"}`}>{password}</h3>
           <section className="range">
             <input 
               type="range" 

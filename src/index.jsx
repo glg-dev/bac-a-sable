@@ -9,6 +9,8 @@ import Stars from './projects/Stars';
 import Game from './projects/TicTacToe/Game';
 import './style/index.scss'
 
+export const documentTitle = document.title
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
