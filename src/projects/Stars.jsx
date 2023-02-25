@@ -14,7 +14,7 @@ const Stars = () => {
 
   function makeAStar() {
     const size = Math.random() * 2 + 'px'
-    const colors = [ '#8CBFDB', '#303e8c', '#4369d9', '#1f1f26', '#9ad2df', '#333259', '#302f40' ];
+    const colors = [ '#8CBFDB', '#303e8c', '#4369d9', '#1f1f26', '#9ad2df', '#333259', '#302f40', '#1C418C', '#092140', '#163E73', '#081526', '#4B7DBF' ];
     const index = Math.floor(Math.random() * colors.length)
 
     const Star = styled.span`
