@@ -7,18 +7,18 @@
   transition: $transition-duration;
   cursor: pointer;
   &:hover {
-    box-shadow: 0 0 16px $glowing-yellow;
+    box-shadow: 0 0 16px $honeydew;
     transform: scale(1.01);
     .card {
       background: transparent;
-      color: $glowing-yellow;
+      color: $platinum;
     }
   }
   .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: $light-grey;
+    background: $platinum;
     img {
       width: $card-width;
       height: 196px;
@@ -37,8 +37,8 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background-color: rgba(66, 66, 66, 0.96);
-    color: $light-grey;
+    background-color: rgba($color: $air-force-blue, $alpha: .96);
+    color: $night;
     transition: $transition-duration;
     opacity: 0;
     z-index: 1;
@@ -54,7 +54,7 @@
       font-size: 1.5rem;
       transition: $transition-duration;
       &:hover {
-        box-shadow: 0 0 4px $night-blue;
+        box-shadow: 1px 1px 3px $honeydew;
       }
     }
     &:hover {

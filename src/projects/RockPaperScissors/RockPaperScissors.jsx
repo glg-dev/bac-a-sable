@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { documentTitle } from '../..';
+import BackHomeArrow from '../../components/BackHomeArrow';
 import { extendedRules, rules } from './rules';
 
 const RockPaperScissors = () => {
   
-  document.title = "Rock Paper Scissors"
+  document.title = `${documentTitle} - Rock Paper Scissors`
 
   const [regularMode, setRegularMode] = useState(true)
   const [rulesList, setRulesList] = useState([])
@@ -129,58 +131,61 @@ const RockPaperScissors = () => {
 
   
   return (
-    <div className='rock-paper-scissors game'>
-      <header>
-        <h1 className='score'>You <span>{userScore}</span> - <span>{cpuScore}</span> CPU</h1>
-        <button type="reset" onClick={resetScore}>Restart</button>
-      </header>
-      <div className="rps-board">
-        <main className="wrapper">
-          <button className={`choice ${items[0]}`} onClick={() => handleClick(items[0])}>
-            <i className='fas fa-hand-back-fist'></i>
-          </button>
-          <button className={`choice ${items[1]}`} onClick={() => handleClick(items[1])}>
-            <i className="fas fa-hand"></i>
-          </button>
-          <button className={`choice ${items[2]}`} onClick={() => handleClick(items[2])}>
-            <i className="fas fa-hand-scissors"></i>
-          </button>
-          {
-            !regularMode && (
-              <>
-                <button className={`choice ${items[3]}`} onClick={() => handleClick(items[3])}>
-                  <i className="fas fa-hand-lizard"></i>
-                </button>
-                <button className={`choice ${items[4]}`} onClick={() => handleClick(items[4])}>
-                  <i className="fas fa-hand-spock"></i>
-                </button>
-              </>
-            )
-          }
-        </main>
-        <aside className="rules">
-          <h2>Rules</h2>
-          <ul>
+    <>
+      <BackHomeArrow />
+      <div className='rock-paper-scissors game'>
+        <header>
+          <h1 className='score'>You <span>{userScore}</span> - <span>{cpuScore}</span> CPU</h1>
+          <button type="reset" onClick={resetScore}>Restart</button>
+        </header>
+        <div className="rps-board">
+          <main className="wrapper">
+            <button className={`choice ${items[0]}`} onClick={() => handleClick(items[0])}>
+              <i className='fas fa-hand-back-fist'></i>
+            </button>
+            <button className={`choice ${items[1]}`} onClick={() => handleClick(items[1])}>
+              <i className="fas fa-hand"></i>
+            </button>
+            <button className={`choice ${items[2]}`} onClick={() => handleClick(items[2])}>
+              <i className="fas fa-hand-scissors"></i>
+            </button>
             {
-            rulesList.map((rule, index) => (
-              <li key={index}>{rule}</li>
-            ))
-          }
-          </ul>
-          
-        </aside>
+              !regularMode && (
+                <>
+                  <button className={`choice ${items[3]}`} onClick={() => handleClick(items[3])}>
+                    <i className="fas fa-hand-lizard"></i>
+                  </button>
+                  <button className={`choice ${items[4]}`} onClick={() => handleClick(items[4])}>
+                    <i className="fas fa-hand-spock"></i>
+                  </button>
+                </>
+              )
+            }
+          </main>
+          <aside className="rules">
+            <h2>Rules</h2>
+            <ul>
+              {
+              rulesList.map((rule, index) => (
+                <li key={index}>{rule}</li>
+              ))
+            }
+            </ul>
+            
+          </aside>
+        </div>
+        <button className="game-mode" onClick={() => setRegularMode(!regularMode)}>{regularMode ? "Want to try the Lizard/Spock version ?": "Back to regular version ?" }</button>
+        {
+          userChoice && cpuChoice ? (
+            <div className='comment'>
+              <p className="choices">You chose {userChoice}, the cpu chose {cpuChoice}</p>
+              {status && <p>{status}</p>}
+              <button type="reset" onClick={handleRestart}>Play again</button>
+            </div>
+        
+          ) : null}
       </div>
-      <button className="game-mode" onClick={() => setRegularMode(!regularMode)}>{regularMode ? "Want to try the Lizard/Spock version ?": "Back to regular version ?" }</button>
-      {
-        userChoice && cpuChoice ? (
-          <div className='comment'>
-            <p className="choices">You chose {userChoice}, the cpu chose {cpuChoice}</p>
-            {status && <p>{status}</p>}
-            <button type="reset" onClick={handleRestart}>Play again</button>
-          </div>
-      
-        ) : null}
-    </div>
+    </>
   );
 };
 

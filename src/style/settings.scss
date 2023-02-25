@@ -1,12 +1,6 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   min-height: 100vh;
-  background: radial-gradient(#2B2B2B, #1F1F1F);
+  background: radial-gradient($air-force-blue, #000);
 }
 
 .App {
@@ -16,32 +10,11 @@ body {
   padding: 1.5rem;
 }
 
-ul {
-  list-style-type: none;
-}
-
-.fa-react {
-  color: $react-color;
-}
-
-.fa-js {
-  color: $javascript-color;
-}
-
-.fa-sass {
-  color: $sass-color;
-}
-
-.fa-css3-alt {
-  color: $css-color;
-}
-
 .game {
   display: flex;
   height: 100vh;
   width: 100vw;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(#14055a, $night-blue);
   color: #FFF;
 }

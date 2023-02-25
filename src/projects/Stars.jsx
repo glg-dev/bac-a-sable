@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { documentTitle } from '..';
 import BackHomeArrow from '../components/BackHomeArrow';
 
 const Stars = () => {
@@ -7,7 +8,7 @@ const Stars = () => {
   const [stars, setStars] = useState([])
 
   useEffect(() => {
-    document.title = "Sky by night"
+    document.title = `${documentTitle} - Sky by night`
   }, [])
 
 
